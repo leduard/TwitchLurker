@@ -1,0 +1,4 @@
+node_modules
+release
+resources/channels.json
+resources/credentials.json

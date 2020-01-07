@@ -1,0 +1,69 @@
+header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  border-bottom: 1px solid black;
+}
+
+.draggable {
+  width: 100%;
+  -webkit-app-region: drag;
+}
+
+.draggable h5 {
+  width: 120%;
+  padding: 5px 0px 0px 0px;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.content h5 {
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.load-channels {
+  margin-top: 10vh;
+}
+
+.load-status {
+  margin-top: 2vh;
+  color: #50fa7b;
+}
+
+.button {
+  background-color: #bd93f9;
+  border: 1px solid #bd93f9;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.button:hover {
+  background-color: #9575c4;
+  border: 1px solid #9575c4;
+  font-weight: bold;
+  color: #282a36;
+  cursor: pointer;
+  transition: 50ms;
+}
+
+.add-channel {
+  margin-top: 10vh;
+}
+
+.input {
+  padding: 5px 10px 5px 10px !important;
+  width: 41vw !important;
+  border-radius: 15px !important;
+}
+
+.remove-channel {
+  margin-top: 10vh;
+}

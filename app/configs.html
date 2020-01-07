@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitch Lurker</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../resources/css/configs.css" />
+    <link rel="stylesheet" href="../resources/css/globals.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="draggable">
+          <h5>Options</h5>
+        </div>
+        <div class="window-buttons">
+          <svg height="14" class="window-button" onclick="minimize()">
+            <circle
+              class="minimize-window"
+              cx="7"
+              cy="7"
+              r="7"
+              fill="#ffb86c"
+            ></circle>
+          </svg>
+          <svg height="14" class="window-button" onclick="closeOptions()">
+            <circle
+              class="close-window"
+              cx="7"
+              cy="7"
+              r="7"
+              fill="#ff5555"
+            ></circle>
+          </svg>
+        </div>
+      </header>
+      <div class="content">
+        <div class="load-channels">
+          <input
+            class="button"
+            type="button"
+            value="Load channels from file"
+            onclick="loadChannelsFromFile()"
+          />
+          <h5 id="load-status" class="load-status"></h5>
+        </div>
+        <div class="add-channel">
+          <h5>Add a channel to channel list</h5>
+          <input class="input" type="text" />
+          <input class="button" type="button" value="+" />
+        </div>
+        <div class="remove-channel">
+          <h5>Remove a channel from list</h5>
+          <input class="input" type="text" />
+          <input class="button" type="button" value="-" />
+        </div>
+      </div>
+    </div>
+    <script src="../src/helpers/optionsWindow.js"></script>
+  </body>
+</html>

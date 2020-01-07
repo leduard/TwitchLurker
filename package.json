@@ -1,0 +1,24 @@
+{
+  "name": "TwitchLurker",
+  "main": "main.js",
+  "version": "0.0.1",
+  "author": "Luiz Eduardo",
+  "description": "A app to lurk into twitch chats",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack:win64": "electron-packager . TwitchLurker --overwrite --platform=win32 --arch=x64 --icon=assets/icon.ico --out=./release --ignore=./release --ignore=resources/channels.json --ignore=resources/credentials.json",
+    "pack:win32": "electron-packager . TwitchLurker --overwrite --platform=win32 --arch=ia32 --icon=assets/icon.ico --out=./release --ignore=./release --ignore=resources/channels.json --ignore=resources/credentials.json",
+    "build:win64": "yarn run pack:win64 && node src/builders/win64.js",
+    "build:win32": "yarn run pack:win32 && node src/builders/win32.js"
+  },
+  "devDependencies": {
+    "electron": "^7.1.7",
+    "electron-packager": "^14.1.1",
+    "electron-winstaller": "^3.0.4"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "tmi.js": "^1.5.0"
+  }
+}
