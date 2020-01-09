@@ -14,7 +14,7 @@ module.exports = async client => {
     channels;
 
   if (!fs.existsSync(channelsPath)) {
-    throw 'Channels file not found. Try load it on configs';
+    throw 'Channels file not found. Try load it on options';
   } else {
     channels = require(channelsPath);
   }

@@ -1,4 +1,4 @@
-function minimize() {
+function minimizeWindow() {
   const { remote } = require('electron');
 
   var window = remote.getCurrentWindow();
@@ -6,7 +6,7 @@ function minimize() {
   window.minimize();
 }
 
-function closeMain() {
+function closeWindow() {
   const { remote } = require('electron');
 
   var window = remote.getCurrentWindow();

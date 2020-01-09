@@ -1,8 +1,12 @@
 const tmi = require('tmi.js');
 const fs = require('fs');
 const path = require('path');
+const {
+  remote: { app },
+} = require('electron');
 
 const joinChannels = require('../src/helpers/joinChannels');
+const environment = require('../src/configs/environment');
 
 let client = null;
 
@@ -19,8 +23,20 @@ async function startLurking() {
   log.innerHTML = '';
 
   if (!username.replace(/ /g, '') || !pass.replace(/ /g, '')) {
-    console.log('type username and pass');
+    log.innerHTML = 'Please type username and OAuth';
     return;
+  } else if (
+    username.startsWith(' ') ||
+    pass.startsWith(' ') ||
+    pass.includes(' ')
+  ) {
+    if (username.startsWith(' ')) {
+      log.innerHTML = 'Please type a valid username';
+      return;
+    } else if (pass.startsWith(' ') || pass.includes(' ')) {
+      log.innerHTML = 'Please type a valid OAuth';
+      return;
+    }
   }
 
   startButton.value = '';
@@ -51,9 +67,11 @@ async function startLurking() {
     startButton.onclick = startLurking;
   });
 
-  client.on('join', (channel, username, self) => {
-    if (username == 'blackedu') console.log(`${channel}`);
-  });
+  if (environment(app) == 'DEV') {
+    client.on('join', (channel, username, self) => {
+      console.log(`${channel}`);
+    });
+  }
 
   if (!error) {
     log.innerHTML = `Joining channels!`;

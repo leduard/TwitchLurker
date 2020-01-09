@@ -26,7 +26,7 @@
             height="20"
             viewBox="0 0 24 24"
             class="options"
-            onclick="openConfigs()"
+            onclick="ipcMain.emit('openConfigs');"
           >
             <path
               class="options"
@@ -41,7 +41,7 @@
           <svg height="14" class="window-button">
             <circle
               class="minimize-window"
-              onclick="minimize()"
+              onclick="minimizeWindow()"
               cx="7"
               cy="7"
               r="7"
@@ -51,7 +51,7 @@
           <svg height="14" class="window-button">
             <circle
               class="close-window"
-              onclick="closeMain()"
+              onclick="closeWindow()"
               cx="7"
               cy="7"
               r="7"
@@ -80,8 +80,12 @@
         </div>
       </div>
     </div>
-    <script src="../src/helpers/optionsWindow.js"></script>
-    <script src="../src/helpers/mainWindow.js"></script>
+    <script>
+      const {
+        remote: { ipcMain },
+      } = require('electron');
+    </script>
+    <script src="../src/helpers/windowButtons.js"></script>
     <script src="../src/helpers/twitchClient.js"></script>
   </body>
 </html>
