@@ -5,7 +5,7 @@ const url = require('url');
   try {
     await electronInstaller.createWindowsInstaller({
       name: 'TwitchLurker',
-      version: '0.0.1',
+      version: '0.0.2',
       description: 'A app to lurk into twitch chats',
       authors: 'Eduardo',
       iconUrl: url.pathToFileURL('./assets/icon.ico').href,

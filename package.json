@@ -1,7 +1,7 @@
 {
   "name": "TwitchLurker",
   "main": "main.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Luiz Eduardo",
   "description": "A app to lurk into twitch chats",
   "license": "MIT",
