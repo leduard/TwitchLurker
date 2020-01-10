@@ -1,4 +1,5 @@
 node_modules
-release
+releases
 resources/channels.json
 resources/credentials.json
+*.env
