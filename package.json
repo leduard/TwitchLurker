@@ -1,15 +1,15 @@
 {
   "name": "TwitchLurker",
   "main": "main.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Luiz Eduardo",
   "description": "A app to lurk into twitch chats",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "build": "electron-builder",
-    "release": "electron-builder --publish always"
+    "build": "electron-builder --ia32",
+    "release": "electron-builder --ia32 --publish always"
   },
   "devDependencies": {
     "electron": "^7.1.7",
@@ -29,19 +29,20 @@
       "buildResources": "resources/assets",
       "output": "releases"
     },
-    "files": [
-      "!releases/*",
-      "!.vscode/*",
-      "!resources/channels.json",
-      "!resources/credentials.json"
-    ],
     "win": {
-      "target": "portable"
+      "target": [
+        "portable",
+        "nsis"
+      ]
     },
     "publish": {
       "provider": "github",
       "owner": "leduard",
       "repo": "TwitchLurker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     }
   }
 }
