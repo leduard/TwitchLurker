@@ -1,16 +1,12 @@
 const fs = require('fs');
-const path = require('path');
+const {
+  remote: { app },
+} = require('electron');
 
 const sleep = require('./sleep');
 
 module.exports = async client => {
-  let channelsPath = path.join(
-      __dirname,
-      '..',
-      '..',
-      'resources',
-      'channels.json'
-    ),
+  let channelsPath = `${app.getPath('userData')}\\channels.json`,
     channels;
 
   if (!fs.existsSync(channelsPath)) {
