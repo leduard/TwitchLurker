@@ -1,6 +1,5 @@
 const tmi = require('tmi.js');
 const fs = require('fs');
-const path = require('path');
 const {
   remote: { app },
 } = require('electron');
@@ -74,6 +73,8 @@ async function startLurking() {
   }
 
   if (!error) {
+    saveCredentials(username, pass);
+
     log.innerHTML = `Joining channels!`;
 
     await joinChannels(client).catch(err => {
@@ -95,8 +96,6 @@ async function startLurking() {
       startButton.classList.add('lurking');
       startButton.onclick = stopLurking;
     }
-
-    saveCredentials(username, pass);
   }
 }
 
@@ -117,12 +116,7 @@ async function stopLurking() {
 }
 
 async function saveCredentials(user, pass) {
-  let credentialsPath = path.join(
-      __dirname,
-      '..',
-      'resources',
-      'credentials.json'
-    ),
+  let credentialsPath = `${app.getPath('userData')}\\credentials.json`,
     credentials = {};
 
   credentials.username = user;
@@ -132,12 +126,7 @@ async function saveCredentials(user, pass) {
 }
 
 async function loadCredentials() {
-  let credentialsPath = path.join(
-      __dirname,
-      '..',
-      'resources',
-      'credentials.json'
-    ),
+  let credentialsPath = `${app.getPath('userData')}\\credentials.json`,
     credentials;
 
   if (fs.existsSync(credentialsPath)) {
