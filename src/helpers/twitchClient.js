@@ -15,6 +15,7 @@ async function startLurking() {
   let username = document.getElementById('user').value;
   let pass = document.getElementById('pass').value;
   let log = document.getElementById('logs');
+  let channelCount = document.getElementById('channel-count');
   let error = false;
 
   let startButton = document.getElementById('start-button');
@@ -81,6 +82,7 @@ async function startLurking() {
       error = true;
 
       log.innerHTML = `${err}`;
+      channelCount.innerHTML = '';
       startButton.value = 'Start Lurking';
       startButton.classList.remove('loading');
       startButton.onclick = startLurking;
@@ -91,6 +93,7 @@ async function startLurking() {
 
     if (!error) {
       log.innerHTML = `Joined on all channels!`;
+      channelCount.innerHTML = '';
       startButton.value = 'Stop Lurking';
       startButton.classList.remove('loading');
       startButton.classList.add('lurking');

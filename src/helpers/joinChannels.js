@@ -7,7 +7,8 @@ const sleep = require('./sleep');
 
 module.exports = async client => {
   let channelsPath = `${app.getPath('userData')}\\channels.json`,
-    channels;
+    channels,
+    channelCount = document.getElementById('channel-count');
 
   if (!fs.existsSync(channelsPath)) {
     throw 'Channels file not found. Try load it on options';
@@ -19,6 +20,7 @@ module.exports = async client => {
 
   for (let x = 0; x <= channels.length; x++) {
     client.join(channels[x]).catch(err => {});
+    channelCount.innerHTML = `Joined on: ${x} / ${channels.length} channels`;
     await sleep(100);
   }
 };

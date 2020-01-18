@@ -79,6 +79,7 @@ header {
   background-color: #50fa7b !important;
   border: 1px solid #50fa7b !important;
   color: #282a36 !important;
+  font-weight: bold;
 }
 
 .lurking:hover {
@@ -93,4 +94,5 @@ header {
 
 .logs {
   font-size: 16px;
+  margin-top: 10px;
 }
