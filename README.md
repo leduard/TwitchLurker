@@ -6,7 +6,7 @@ An app made with electron, that provides a easy way to lurk into twitch chats.
 
 All releases are available [here](https://github.com/leduard/TwitchLurker/releases)
 
-## Building
+## Running and building
 
 First of all clone this repository
 
@@ -28,4 +28,11 @@ After install all dependencies you can start the app:
 
 ```bash
 yarn run start
+```
+
+To build just run:
+
+```bash
+yarn run build
+# this will build an app with ia32 arch
 ```
