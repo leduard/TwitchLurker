@@ -10,6 +10,7 @@ function loadChannelsFromFile() {
 
   if (!dialogOpen) {
     dialogOpen = true;
+
     let file = dialog.showOpenDialogSync({
       properties: ['openFile'],
       filters: [{ name: 'txt', extensions: ['txt'] }],
@@ -21,17 +22,14 @@ function loadChannelsFromFile() {
     }
 
     let data = fs.readFileSync(file[0], { encoding: 'utf8' });
-
     let channels = data.replace(/ /g, '').split(',');
+    let loadStatus = document.getElementById('load-status');
 
     channels = fixChannels(channels);
 
     fs.writeFileSync(channelsFilePath, JSON.stringify(channels));
 
-    let loadStatus = document.getElementById('load-status');
-
     loadStatus.innerHTML = 'Done!';
-
     dialogOpen = false;
   }
 }
