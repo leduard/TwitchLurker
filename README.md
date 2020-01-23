@@ -21,13 +21,13 @@ Then install all dependencies.
 cd TwitchLurker
 
 # yarn is recommended
-yarn install
+yarn
 ```
 
 After install all dependencies you can start the app:
 
 ```bash
-yarn run start
+yarn start
 ```
 
 To build just run:
