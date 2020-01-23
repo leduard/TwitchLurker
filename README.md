@@ -36,3 +36,7 @@ To build just run:
 yarn run build
 # this will build an app with ia32 arch
 ```
+
+## Screenshots
+
+![screenshot](/resources/img/screenshot/screenshot.png)
