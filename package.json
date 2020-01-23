@@ -14,11 +14,9 @@
   "devDependencies": {
     "electron": "^7.1.7",
     "electron-builder": "^21.2.0",
-    "electron-packager": "^14.1.1",
-    "electron-winstaller": "^3.0.4"
+    "electron-packager": "^14.1.1"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
     "tmi.js": "^1.5.0"
   },
   "build": {
