@@ -1,7 +1,10 @@
-let dialogOpen = false;
 const {
   remote: { app },
 } = require('electron');
+
+let dialogOpen = false;
+
+showChannelCount();
 
 function loadChannelsFromFile() {
   const fs = require('fs');
@@ -133,4 +136,16 @@ function fixChannels(channels) {
   }
 
   return channels;
+}
+
+function showChannelCount() {
+  const fs = require('fs');
+  let channelsFilePath = `${app.getPath('userData')}\\channels.json`;
+
+  if (fs.existsSync(channelsFilePath)) {
+    let currentChannels = fs.readFileSync(channelsFilePath);
+    document.getElementById(
+      'channel-count'
+    ).innerHTML = `You currently have ${currentChannels.length} channels loaded`;
+  }
 }
