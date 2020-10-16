@@ -9,7 +9,8 @@ mainElement.setAttribute('id', 'root');
 document.body.appendChild(mainElement);
 
 bootstrap();
-
+// just to commit
+// learning github actions
 ReactDOM.render(
   <React.StrictMode>
     <App />
