@@ -1,6 +1,5 @@
 # TwitchLurker
 
-
 ## Installation
 
 Use a package manager of your choice (npm, yarn, etc.) in order to install all dependencies
