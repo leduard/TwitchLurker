@@ -1,42 +1,37 @@
-# TwitchLurker
+## Electron + TypeScript + React
 
-An app made with electron, that provides a easy way to lurk into twitch chats.
+Boilerplate for a project using Electron, React and Typescript
 
-## Download
+## Installation
 
-All releases are available [here](https://github.com/leduard/TwitchLurker/releases)
-
-## Running and building
-
-First of all clone this repository
+Use a package manager of your choice (npm, yarn, etc.) in order to install all dependencies
 
 ```bash
-git clone https://github.com/leduard/TwitchLurker.git
+yarn install
 ```
 
-With repository on your machine go to created folder (TwitchLurker as default).
-Then install all dependencies.
+## Usage
+
+In order to run this project 2 scripts will need to be executed `dev:react` and `dev:electron`, run each one in a different terminal and always run `dev:react` before `dev:electron`, or `dev` to run them in order automatically
 
 ```bash
-cd TwitchLurker
-
-# yarn is recommended
-yarn
+yarn dev:react
 ```
-
-After install all dependencies you can start the app:
 
 ```bash
-yarn start
+yarn dev:electron
 ```
 
-To build just run:
+or
 
 ```bash
-yarn run build
-# this will build an app with ia32 arch
+yarn dev
 ```
 
-## Screenshots
+## Packaging
 
-![screenshot](/resources/img/screenshot/screenshot.png)
+To generate a project package run `package`
+
+```bash
+yarn package
+```
