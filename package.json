@@ -18,6 +18,7 @@
     "build:react": "webpack --config webpack/react.webpack.js",
     "package": "npm-run-all build package:dist",
     "package:dist": "electron-builder --ia32",
+    "lint": "eslint . --fix",
     "test": "jest"
   },
   "build": {
@@ -25,8 +26,10 @@
     "productName": "TwitchLurker",
     "copyright": "Copyright © 2020 ${author}",
     "directories": {
+      "buildResources": "src/assets",
       "output": "packages"
     },
+    "artifactName": "${productName}-portable-${os}-${version}.${ext}",
     "files": [
       "package.json",
       "dist/**"
@@ -39,7 +42,8 @@
     },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "${productName}-setup-${os}-${version}.${ext}"
     }
   },
   "dependencies": {
