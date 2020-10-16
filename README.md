@@ -1,6 +1,5 @@
-## Electron + TypeScript + React
+# TwitchLurker
 
-Boilerplate for a project using Electron, React and Typescript
 
 ## Installation
 
