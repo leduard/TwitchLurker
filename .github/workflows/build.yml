@@ -32,9 +32,11 @@ jobs:
     - name: Create portable artifact
       uses: actions/upload-artifact@v2.2.0
       with:
+        name: twitchlurker-portable
         path: packages/*-portable-*.exe
 
     - name: Create setup artifact
       uses: actions/upload-artifact@v2.2.0
       with:
+        name: twitchlurker-setup
         path: packages/*-setup-*.exe
