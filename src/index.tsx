@@ -10,7 +10,7 @@ document.body.appendChild(mainElement);
 
 bootstrap();
 // just to commit
-// learning github actions 2
+// learning github actions 3
 ReactDOM.render(
   <React.StrictMode>
     <App />
